@@ -7,13 +7,16 @@ gem 'rails', '4.0.2'
 gem 'rails-api', '0.2.0'
 
 # Use sqlite3 as the database for Active Record
-group :test, :development do
+group :test do
   gem 'sqlite3'
 end
 
-group :production do
+group :production, :development do
   gem 'pg'
 end
+
+# add static page
+gem 'high_voltage', '~> 2.1.0'
 
 
 # To use ActiveModel has_secure_password

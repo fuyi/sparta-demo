@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" ng-app="demoApp">
+<head>
+  <meta charset="utf-8">
+  <title>Demo app</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/flat-ui.css">
+  <link rel="stylesheet" href="css/app.css">
+
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-resource.js"></script>
+  <script src="js/app.js"></script>
+</head>
+<body>
+
+  <div class="container" ng-controller="DemoController">
+    <h1 class="bg-info">Manage all competitions</h1>
+    <br>
+    <div class="row">
+      <div class="col-md-2">
+        <span class="label label-default">Competition filter</span>
+      </div>
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="Filter Competitions" ng-model='q'>
+      </div>
+
+    </div>
+    <br>
+    <div class="row">
+      <ul class="list-group">
+        <li class="list-group-item bg-primary" ng-repeat="c in competitions | filter:q">{{c.name}}
+          <a class="btn btn-danger btn-small pull-right" ng-click="remove(c)">Delete</a>
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <span class="label label-default">Add competition</span>
+      </div>
+      <div class="col-md-4">
+        <input class="form-control" type="text" ng-model="Comp.name" placeholder="competition name">
+      </div>
+      <div class="col-md-2">
+        <button ng-click="add_button_click()" class="btn btn-success">Add</button>
+      </div>
+    </div>
+
+  </div> <!--container end-->
+
+</body>
+</html>
