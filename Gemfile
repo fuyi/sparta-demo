@@ -18,8 +18,10 @@ group :production, :development do
 end
 
 # add static page
-gem 'high_voltage', '~> 2.1.0'
+# gem 'high_voltage', '~> 2.1.0'
 
+# heroku require rails_12factor for full feature
+gem 'rails_12factor'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
